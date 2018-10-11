@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import '../widgets/shop/shops.dart';
-import '../models/shop.dart';
 
 class ShopListPage extends StatelessWidget {
-  final List<Shop> shops;
-  ShopListPage(this.shops);
+  final List<String> shopType = [
+    'foodDrinks',
+    'spaMassage',
+    'hotels',
+    'beauty',
+  ];
 
-  final List<Tab> categoriesTab = [
+  final List<Tab> shopTypeTab = [
     Tab(text: 'Food & Drinks'),
     Tab(text: 'Spa & Massage'),
     Tab(text: 'Hotels'),
@@ -15,12 +18,12 @@ class ShopListPage extends StatelessWidget {
 
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: categoriesTab.length,
+      length: shopTypeTab.length,
       child: Scaffold(
         appBar: AppBar(
           title: Text('Shops'),
           bottom: TabBar(
-            tabs: categoriesTab,
+            tabs: shopTypeTab,
           ),
         ),
         body: TabBarView(
@@ -28,25 +31,25 @@ class ShopListPage extends StatelessWidget {
             Container(
               child: Column(children: <Widget>[
                 Icon(Icons.restaurant),
-                Shops(shops),
+                Shops(shopType[0]),
               ]),
             ),
             Container(
               child: Column(children: <Widget>[
                 Icon(Icons.receipt),
-                Shops(shops),
+                Shops(shopType[1]),
               ]),
             ),
             Container(
               child: Column(children: <Widget>[
                 Icon(Icons.beach_access),
-                Shops(shops),
+                Shops(shopType[2]),
               ]),
             ),
             Container(
               child: Column(children: <Widget>[
                 Icon(Icons.face),
-                Shops(shops),
+                Shops(shopType[3]),
               ]),
             )
           ],

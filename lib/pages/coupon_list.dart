@@ -4,9 +4,7 @@ import '../widgets/coupon/coupons.dart';
 import '../models/coupon.dart';
 
 class MyCouponPage extends StatelessWidget {
- final List<Coupon> coupons;
-
-  MyCouponPage(this.coupons);
+ 
 
   Widget build(BuildContext context) {
     return Container(
@@ -19,7 +17,7 @@ class MyCouponPage extends StatelessWidget {
             onPressed: () {},
           ),
         ]),
-        Coupons(coupons),
+        Coupons(),
       ]),
     );
   }

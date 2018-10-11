@@ -4,8 +4,6 @@ import './shop_list.dart';
 import './coupon_list.dart';
 import './get_coupon.dart';
 import './profile.dart';
-import '../models/coupon.dart';
-import '../models/shop.dart';
 
 class MyHomePage extends StatefulWidget {
   // final List<Coupon> coupons;

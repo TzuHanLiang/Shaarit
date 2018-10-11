@@ -12,14 +12,14 @@ class _AuthPageState extends State<AuthPage> {
   String _passwordValue;
   bool _acceptTerms = false;
 
-  // DecorationImage _buildBackgroundImage() {
-  //   return DecorationImage(
-  //     fit: BoxFit.cover,
-  //     colorFilter:
-  //         ColorFilter.mode(Colors.black.withOpacity(0.5), BlendMode.dstATop),
-  //     image: AssetImage('assets/insinger.jpg'),
-  //   );
-  // }
+  DecorationImage _buildBackgroundImage() {
+    return DecorationImage(
+      fit: BoxFit.cover,
+      colorFilter:
+          ColorFilter.mode(Colors.black.withOpacity(0.5), BlendMode.dstATop),
+      image: AssetImage('assets/food.jpg'),
+    );
+  }
 
   Widget _buildEmailTextField() {
     return TextField(
@@ -47,22 +47,17 @@ class _AuthPageState extends State<AuthPage> {
     );
   }
 
-  Widget _buildAcceptSwitch() {
-    return SwitchListTile(
-      value: _acceptTerms,
-      onChanged: (bool value) {
-        setState(() {
-          _acceptTerms = value;
-        });
-      },
-      title: Text('Accept Terms'),
-    );
-  }
 
   void _submitForm() {
-    print(_emailValue);
-    print(_passwordValue);
     Navigator.pushReplacementNamed(context, '/home');
+  }
+
+  void _forgotPassword(){
+
+  }
+
+  void _signup() {
+    Navigator.pushNamed(context, '/resgister');
   }
 
   @override
@@ -71,12 +66,12 @@ class _AuthPageState extends State<AuthPage> {
     final double targetWidth = deviceWidth > 550.0 ? 500.0 : deviceWidth * 0.95;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Login'),
+        title: Text('Log in'),
       ),
       body: Container(
-        // decoration: BoxDecoration(
-        //   image: _buildBackgroundImage(),
-        // ),
+        decoration: BoxDecoration(
+          image: _buildBackgroundImage(),
+        ),
         padding: EdgeInsets.all(10.0),
         child: Center(
           child: SingleChildScrollView(
@@ -89,15 +84,30 @@ class _AuthPageState extends State<AuthPage> {
                     height: 10.0,
                   ),
                   _buildPasswordTextField(),
-                  _buildAcceptSwitch(),
+                  FlatButton(
+                    color: Theme.of(context).primaryColor,
+                    textColor: Colors.white,
+                    child: Text('Forgot your password?'),
+                    onPressed: _forgotPassword,
+                  ),
                   SizedBox(
                     height: 10.0,
                   ),
                   RaisedButton(
                     color: Theme.of(context).primaryColor,
                     textColor: Colors.white,
-                    child: Text('LOGIN'),
+                    child: Text('Login'),
                     onPressed: _submitForm,
+                  ),
+                  SizedBox(
+                    height: 10.0,
+                  ),
+                  Text('Join us'),
+                  RaisedButton(
+                    color: Theme.of(context).primaryColor,
+                    textColor: Colors.white,
+                    child: Text('Sign up'),
+                    onPressed: _signup,
                   ),
                 ],
               ),
