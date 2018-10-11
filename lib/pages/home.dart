@@ -6,12 +6,7 @@ import './get_coupon.dart';
 import './profile.dart';
 
 class MyHomePage extends StatefulWidget {
-  // final List<Coupon> coupons;
-  // final List<Shop> shops;
-  // MyHomePage(this.coupons, this.shops);
-
-
-   final List<Widget> _pages = [
+  final List<Widget> _pages = [
     ShopListPage(),
     MyCouponPage(),
     GetCouponPage(),

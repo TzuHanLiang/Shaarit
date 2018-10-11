@@ -3,7 +3,7 @@ import 'package:scoped_model/scoped_model.dart';
 
 import './coupon_card.dart';
 import '../../models/coupon.dart';
-import '../../scoped-models/coupons.dart';
+import '../../scoped-models/my_models.dart';
 
 class Coupons extends StatelessWidget {
   Widget _buildCouponList(List<Coupon> coupons) {
@@ -22,7 +22,7 @@ class Coupons extends StatelessWidget {
   }
 
   Widget build(BuildContext context) {
-    return ScopedModelDescendant<CouponsModel>(builder: (BuildContext context, Widget child, CouponsModel model) {
+    return ScopedModelDescendant<MyModels>(builder: (BuildContext context, Widget child, MyModels model) {
       return _buildCouponList(model.coupon);
     });
   }

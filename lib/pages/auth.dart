@@ -57,7 +57,7 @@ class _AuthPageState extends State<AuthPage> {
   }
 
   void _signup() {
-    Navigator.pushNamed(context, '/resgister');
+    Navigator.pushReplacementNamed(context, '/resgister');
   }
 
   @override

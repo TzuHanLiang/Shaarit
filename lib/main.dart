@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+
+import 'package:scoped_model/scoped_model.dart';
+
 import './pages/auth.dart';
 import './pages/register.dart';
 import './pages/home.dart';
 import './pages/shop_list.dart';
 import './pages/shop_detail.dart';
 import './pages/coupon_detail.dart';
-import './models/shop.dart';
-import './models/coupon.dart';
+
+import './scoped-models/my_models.dart';
 
 main() {
   runApp(MyApp());
@@ -20,7 +23,9 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return ScopedModel <MyModels> (
+      model: MyModels(),
+        child: MaterialApp(
       routes: {
         '/': (BuildContext context) => AuthPage(),
         '/resgister': (BuildContext context) => RegisterPage(),
@@ -46,6 +51,6 @@ class _MyAppState extends State<MyApp> {
         return MaterialPageRoute(
             builder: (BuildContext context) => ShopListPage());
       },
-    );
+    ));
   }
 }

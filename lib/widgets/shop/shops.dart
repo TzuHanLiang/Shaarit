@@ -4,7 +4,7 @@ import 'package:scoped_model/scoped_model.dart';
 import './shop_card.dart';
 
 import '../../models/shop.dart';
-import '../../scoped-models/shops.dart';
+import '../../scoped-models/my_models.dart';
 
 class Shops extends StatelessWidget {
   final String shopType;
@@ -27,7 +27,7 @@ class Shops extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ScopedModelDescendant<ShopsModel>(builder: (BuildContext context, Widget child, ShopsModel model) {
+    return ScopedModelDescendant<MyModels>(builder: (BuildContext context, Widget child, MyModels model) {
       return _buildShopList(model.shops);
     });
   }
