@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import '../widgets/shops.dart';
+import '../widgets/shop/shops.dart';
+import '../models/shop.dart';
 
 class ShopListPage extends StatelessWidget {
-  // final List<Map<String, dynamic>> shops;
-  // ShopListPage(this.shops);
+  final List<Shop> shops;
+  ShopListPage(this.shops);
 
   final List<Tab> categoriesTab = [
     Tab(text: 'Food & Drinks'),
@@ -27,21 +28,25 @@ class ShopListPage extends StatelessWidget {
             Container(
               child: Column(children: <Widget>[
                 Icon(Icons.restaurant),
+                Shops(shops),
               ]),
             ),
             Container(
               child: Column(children: <Widget>[
                 Icon(Icons.receipt),
+                Shops(shops),
               ]),
             ),
             Container(
               child: Column(children: <Widget>[
                 Icon(Icons.beach_access),
+                Shops(shops),
               ]),
             ),
             Container(
               child: Column(children: <Widget>[
                 Icon(Icons.face),
+                Shops(shops),
               ]),
             )
           ],

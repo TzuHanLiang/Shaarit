@@ -62,7 +62,7 @@ class _AuthPageState extends State<AuthPage> {
   void _submitForm() {
     print(_emailValue);
     print(_passwordValue);
-    Navigator.pushReplacementNamed(context, '/navigator');
+    Navigator.pushReplacementNamed(context, '/home');
   }
 
   @override
