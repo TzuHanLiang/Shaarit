@@ -172,10 +172,10 @@ class ShopListPage extends StatelessWidget {
           ),
         ),
         body: TabBarView(children: [
-          Shops(shopType[0]),
-          Shops(shopType[1]),
-          Shops(shopType[2]),
-          Shops(shopType[3]),
+          ShopsContainer(shopType[0]),
+          ShopsContainer(shopType[1]),
+          ShopsContainer(shopType[2]),
+          ShopsContainer(shopType[3]),
         ]),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
         floatingActionButton: FloatingActionButton.extended(
