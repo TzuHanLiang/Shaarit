@@ -23,7 +23,7 @@ class Coupons extends StatelessWidget {
 
   Widget build(BuildContext context) {
     return ScopedModelDescendant<MyModels>(builder: (BuildContext context, Widget child, MyModels model) {
-      return _buildCouponList(model.coupon);
+      return _buildCouponList(model.coupons);
     });
   }
 }

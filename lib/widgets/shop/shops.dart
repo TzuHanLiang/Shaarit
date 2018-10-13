@@ -10,22 +10,6 @@ class Shops extends StatelessWidget {
   final String shopType;
   Shops(this.shopType);
 
-  Widget _buildButtonBar() {
-    if (shopType == 'restaurant') {
-      return ListView(
-        scrollDirection: Axis.vertical, 
-      children: [
-        ButtonBar(children: <Widget>[
-          FlatButton(child: Text('泰式'), onPressed: () {}),
-          FlatButton(child: Text('中菜'), onPressed: () {}),
-          FlatButton(child: Text('日式'), onPressed: () {}),
-          FlatButton(child: Text('韓式'), onPressed: () {}),
-          FlatButton(child: Text('粵菜'), onPressed: () {}),
-        ]),
-      ]);
-    }
-  }
-
   Widget _buildShopList(List<Shop> shops) {
     Widget shopCards;
     if (shops.length > 0) {
@@ -45,7 +29,16 @@ class Shops extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScopedModelDescendant<MyModels>(
         builder: (BuildContext context, Widget child, MyModels model) {
-      return _buildShopList(model.shops);
+      switch (shopType) {
+        case 'restaurant':
+          return _buildShopList(model.restaurant);
+          case 'hotel':
+          return _buildShopList(model.hotel);
+          case 'massage':
+          return _buildShopList(model.massage);
+          case 'beauty':
+          return _buildShopList(model.beauty);
+      }
     });
   }
 }
