@@ -2,20 +2,15 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
+import 'package:scoped_model/scoped_model.dart';
+import '../models/shop.dart';
+import '../scoped-models/my_models.dart';
 
 
 class ShopPage extends StatelessWidget {
-  // final String shopName;
-  // final String shopType;
-  // final String image;
-  // final double coupon;
-  // final double rebate;
-  // final double distance;
-  // final bool visit;
+  final int shopIndex;
+  ShopPage(this.shopIndex);
 
-  // ShopPage(this.shopName, this.shopType, this.image, this.coupon, this.rebate, this.distance, this.visit);
-
-  
   @override
   Widget build(BuildContext context) {
     return WillPopScope(

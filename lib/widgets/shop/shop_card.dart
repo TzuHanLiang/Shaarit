@@ -7,12 +7,28 @@ class ShopCard extends StatelessWidget {
 
   ShopCard(this.shop, this.shopIndex);
 
+  Widget _buildVisitStatue(Shop shop){
+    if(shop.visit){
+      return Text('已造訪 |' + shop.distance.toString());
+    }else{
+      return Text('未造訪 |' + shop.distance.toString());
+    }
+
+  }
+
   Widget _buildShopDescriptionColumn() {
     return Container(
       child: Column(children: <Widget>[
-        Text(shop.shopName),
-        Text(shop.coupon.toString()),
-        Text(shop.rebate.toString()),
+        Row(children: <Widget>[
+          Text(shop.shopName),
+          _buildVisitStatue(shop),
+        ]),
+        Row(
+          children: <Widget>[
+            Text('Coupon: ' + shop.coupon.toString() + '%'),
+            Text('  Bonus: ' + shop.rebate.toString() + '%'),
+          ],
+        )
       ]),
     );
   }
@@ -20,16 +36,17 @@ class ShopCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      child: Row(
+      child: Column(
         children: <Widget>[
-          Image.asset(shop.image),
-          _buildShopDescriptionColumn(),
-          Row(
-            children: <Widget>[
-              Icon(Icons.pin_drop),
-              Text(shop.distance.toString()),
-            ],
+          Image.asset(
+            shop.image,
+            height: 100.0,
+            width: 512.0,
+            fit: BoxFit.cover,
           ),
+          SizedBox(height: 10.0),
+          _buildShopDescriptionColumn(),
+          SizedBox(height: 10.0),
         ],
       ),
     );
