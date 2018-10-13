@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../widgets/shop/container.dart';
-import '../widgets/shop/shops.dart';
+
 
 class ShopListPage extends StatelessWidget {
   final List<String> shopType = [
@@ -156,7 +156,7 @@ class ShopListPage extends StatelessWidget {
       length: shopTypeTab.length,
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.red,
+          backgroundColor: Colors.red[200],
           title: Text('Shops'),
           actions: <Widget>[
             IconButton(
@@ -165,9 +165,9 @@ class ShopListPage extends StatelessWidget {
             )
           ],
           bottom: TabBar(
-            indicatorColor: Color.fromRGBO(255, 255, 255, 0.0),
-            labelColor: Colors.white,
-            unselectedLabelColor: Colors.black,
+            indicatorColor: Colors.red,
+            labelColor: Colors.red,
+            unselectedLabelColor: Colors.grey,
             tabs: shopTypeTab,
           ),
         ),

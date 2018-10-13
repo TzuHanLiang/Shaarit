@@ -4,7 +4,30 @@ import '../models/shop.dart';
 import '../models/coupon.dart';
 
 class MyModels extends Model {
-  List<Coupon> _coupons = [];
+  List<Coupon> _coupons = [
+    Coupon('Liz Liang','assets/food.jpg', 'Lady M', 'restaurant', 'Pastry', 10.0, 100,
+          ),
+      Coupon('Liz Liang', 'assets/food.jpg', 'Lady M', 'restaurant', 'Pastry', 10.0, 100,
+          ),
+      Coupon('Liz Liang','assets/food.jpg', 'Lady M', 'restaurant', 'Pastry', 10.0, 100,
+          ),
+      Coupon('Liz Liang','assets/food.jpg', 'Lady M', 'restaurant', 'Pastry', 10.0, 100,
+          ),
+      Coupon('Liz Liang','assets/food.jpg', 'Lady M', 'restaurant', 'Pastry', 10.0, 100,
+          ),
+      Coupon('Liz Liang','assets/food.jpg', 'Lady M', 'restaurant', 'Pastry', 10.0, 100,
+          ),
+      Coupon('Liz Liang','assets/food.jpg', 'Lady M', 'restaurant', 'Pastry', 10.0, 100,
+          ),
+      Coupon('Liz Liang','assets/food.jpg', 'Lady M', 'restaurant', 'Pastry', 10.0, 100,
+          ),
+      Coupon('Liz Liang','assets/food.jpg', 'Lady M', 'restaurant', 'Pastry', 10.0, 100,
+          ),
+      Coupon('Liz Liang','assets/food.jpg', 'Lady M', 'restaurant', 'Pastry', 10.0, 100,
+          ),
+      Coupon('Liz Liang','assets/food.jpg', 'Lady M', 'restaurant', 'Pastry', 10.0, 100,
+          ),
+  ];
 
   Map<String, List<Shop>> _shops = {
     'restaurant': [

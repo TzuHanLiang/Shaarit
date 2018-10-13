@@ -1,24 +1,32 @@
 import 'package:flutter/material.dart';
 
 import '../widgets/coupon/coupons.dart';
-import '../models/coupon.dart';
+import './recommend.dart';
 
 class MyCouponPage extends StatelessWidget {
- 
-
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.all(10.0),
-      child: Column(children: <Widget>[
-        SizedBox(height: 30.0),
-        Row(children: <Widget>[
-          IconButton(
-            icon: Icon(Icons.chat_bubble_outline),
-            onPressed: () {},
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.red[200],
+          title: Text('My Coupon'),
+          bottom: TabBar(
+            labelColor: Colors.red,
+            unselectedLabelColor: Colors.grey,
+            indicatorColor: Colors.red,
+            tabs: <Widget>[
+              Tab(text: 'My Coupons'),
+              Tab(text: 'My Recommendation')
+            ],
           ),
+        ),
+        body: TabBarView(children: [
+          Coupons(),
+          RecommendationPage(),
         ]),
-        Coupons(),
-      ]),
+        // icon: Icon(Icons.arrow_upward)),
+      ),
     );
   }
 }
