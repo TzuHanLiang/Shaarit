@@ -27,6 +27,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       body: widget._pages[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
+        fixedColor: Colors.red,
         currentIndex: _currentIndex,
         onTap: (int index) {
           setState(() {

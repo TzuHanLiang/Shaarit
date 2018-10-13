@@ -5,6 +5,7 @@ import '../models/coupon.dart';
 
 class MyModels extends Model {
   List<Coupon> _coupons = [];
+
   Map<String, List<Shop>> _shops = {
     'restaurant': [
       Shop('assets/food.jpg', 'Lady M', 'restaurant', 'Pastry', 'Taipei', 90.0,
@@ -31,28 +32,28 @@ class MyModels extends Model {
           10.0, 20.0, true),
     ],
     'hotel': [
-      Shop('assets/whotel.jpg', 'W Hotel', 'hotel', 'Classic', 'Taipei', 90.0, 10.0,
-          20.0, true),
-      Shop('assets/whotel.jpg', 'W Hotel', 'hotel', 'Classic', 'Taipei', 90.0, 10.0,
-          20.0, false),
-      Shop('assets/whotel.jpg', 'W Hotel', 'hotel', 'Classic', 'Taipei', 90.0, 10.0,
-          20.0, true),
-      Shop('assets/whotel.jpg', 'W Hotel', 'hotel', 'Classic', 'Taipei', 90.0, 10.0,
-          20.0, false),
-      Shop('assets/whotel.jpg', 'W Hotel', 'hotel', 'Classic', 'Taipei', 90.0, 10.0,
-          20.0, true),
-      Shop('assets/whotel.jpg', 'W Hotel', 'hotel', 'Classic', 'Taipei', 90.0, 10.0,
-          20.0, false),
-      Shop('assets/whotel.jpg', 'W Hotel', 'hotel', 'Classic', 'Taipei', 90.0, 10.0,
-          20.0, false),
-      Shop('assets/whotel.jpg', 'W Hotel', 'hotel', 'Classic', 'Taipei', 90.0, 10.0,
-          20.0, true),
-      Shop('assets/whotel.jpg', 'W Hotel', 'hotel', 'Classic', 'Taipei', 90.0, 10.0,
-          20.0, true),
-      Shop('assets/whotel.jpg', 'W Hotel', 'hotel', 'Classic', 'Taipei', 90.0, 10.0,
-          20.0, true),
-      Shop('assets/whotel.jpg', 'W Hotel', 'hotel', 'Classic', 'Taipei', 90.0, 10.0,
-          20.0, true),
+      Shop('assets/whotel.jpg', 'W Hotel', 'hotel', 'Classic', 'Taipei', 90.0,
+          10.0, 20.0, true),
+      Shop('assets/whotel.jpg', 'W Hotel', 'hotel', 'Classic', 'Taipei', 90.0,
+          10.0, 20.0, false),
+      Shop('assets/whotel.jpg', 'W Hotel', 'hotel', 'Classic', 'Taipei', 90.0,
+          10.0, 20.0, true),
+      Shop('assets/whotel.jpg', 'W Hotel', 'hotel', 'Classic', 'Taipei', 90.0,
+          10.0, 20.0, false),
+      Shop('assets/whotel.jpg', 'W Hotel', 'hotel', 'Classic', 'Taipei', 90.0,
+          10.0, 20.0, true),
+      Shop('assets/whotel.jpg', 'W Hotel', 'hotel', 'Classic', 'Taipei', 90.0,
+          10.0, 20.0, false),
+      Shop('assets/whotel.jpg', 'W Hotel', 'hotel', 'Classic', 'Taipei', 90.0,
+          10.0, 20.0, false),
+      Shop('assets/whotel.jpg', 'W Hotel', 'hotel', 'Classic', 'Taipei', 90.0,
+          10.0, 20.0, true),
+      Shop('assets/whotel.jpg', 'W Hotel', 'hotel', 'Classic', 'Taipei', 90.0,
+          10.0, 20.0, true),
+      Shop('assets/whotel.jpg', 'W Hotel', 'hotel', 'Classic', 'Taipei', 90.0,
+          10.0, 20.0, true),
+      Shop('assets/whotel.jpg', 'W Hotel', 'hotel', 'Classic', 'Taipei', 90.0,
+          10.0, 20.0, true),
     ],
     'massage': [
       Shop('assets/massage.jpg', 'Relax', 'massage', 'Pastry', 'Taipei', 90.0,
@@ -79,49 +80,48 @@ class MyModels extends Model {
           10.0, 20.0, true),
     ],
     'beauty': [
-      Shop('assets/loccitane.jpg', 'L\'OCCITANE', 'beauty', 'Pastry', 'Taipei', 90.0,
-          10.0, 20.0, true),
-      Shop('assets/loccitane.jpg', 'L\'OCCITANE', 'beauty', 'Pastry', 'Taipei', 90.0,
-          10.0, 20.0, false),
-      Shop('assets/loccitane.jpg', 'L\'OCCITANE', 'beauty', 'Pastry', 'Taipei', 90.0,
-          10.0, 20.0, true),
-      Shop('assets/loccitane.jpg', 'L\'OCCITANE', 'beauty', 'Pastry', 'Taipei', 90.0,
-          10.0, 20.0, false),
-      Shop('assets/loccitane.jpg', 'L\'OCCITANE', 'beauty', 'Pastry', 'Taipei', 90.0,
-          10.0, 20.0, true),
-      Shop('assets/loccitane.jpg', 'L\'OCCITANE', 'beauty', 'Pastry', 'Taipei', 90.0,
-          10.0, 20.0, false),
-      Shop('assets/loccitane.jpg', 'L\'OCCITANE', 'beauty', 'Pastry', 'Taipei', 90.0,
-          10.0, 20.0, false),
-      Shop('assets/loccitane.jpg', 'L\'OCCITANE', 'beauty', 'Pastry', 'Taipei', 90.0,
-          10.0, 20.0, true),
-      Shop('assets/loccitane.jpg', 'L\'OCCITANE', 'beauty', 'Pastry', 'Taipei', 90.0,
-          10.0, 20.0, true),
-      Shop('assets/loccitane.jpg', 'L\'OCCITANE', 'beauty', 'Pastry', 'Taipei', 90.0,
-          10.0, 20.0, true),
-      Shop('assets/loccitane.jpg', 'L\'OCCITANE', 'beauty', 'Pastry', 'Taipei', 90.0,
-          10.0, 20.0, true),
+      Shop('assets/loccitane.jpg', 'L\'OCCITANE', 'beauty', 'Pastry', 'Taipei',
+          90.0, 10.0, 20.0, true),
+      Shop('assets/loccitane.jpg', 'L\'OCCITANE', 'beauty', 'Pastry', 'Taipei',
+          90.0, 10.0, 20.0, false),
+      Shop('assets/loccitane.jpg', 'L\'OCCITANE', 'beauty', 'Pastry', 'Taipei',
+          90.0, 10.0, 20.0, true),
+      Shop('assets/loccitane.jpg', 'L\'OCCITANE', 'beauty', 'Pastry', 'Taipei',
+          90.0, 10.0, 20.0, false),
+      Shop('assets/loccitane.jpg', 'L\'OCCITANE', 'beauty', 'Pastry', 'Taipei',
+          90.0, 10.0, 20.0, true),
+      Shop('assets/loccitane.jpg', 'L\'OCCITANE', 'beauty', 'Pastry', 'Taipei',
+          90.0, 10.0, 20.0, false),
+      Shop('assets/loccitane.jpg', 'L\'OCCITANE', 'beauty', 'Pastry', 'Taipei',
+          90.0, 10.0, 20.0, false),
+      Shop('assets/loccitane.jpg', 'L\'OCCITANE', 'beauty', 'Pastry', 'Taipei',
+          90.0, 10.0, 20.0, true),
+      Shop('assets/loccitane.jpg', 'L\'OCCITANE', 'beauty', 'Pastry', 'Taipei',
+          90.0, 10.0, 20.0, true),
+      Shop('assets/loccitane.jpg', 'L\'OCCITANE', 'beauty', 'Pastry', 'Taipei',
+          90.0, 10.0, 20.0, true),
+      Shop('assets/loccitane.jpg', 'L\'OCCITANE', 'beauty', 'Pastry', 'Taipei',
+          90.0, 10.0, 20.0, true),
     ],
   };
-
-  
 
   List<Coupon> get coupons {
     return List.from(_coupons);
   }
 
-  
-  List<Shop> get restaurant{
+  List<Shop> get restaurant {
     return List.from(_shops['restaurant']);
   }
-  List<Shop> get hotel{
+
+  List<Shop> get hotel {
     return List.from(_shops['hotel']);
   }
-  List<Shop> get massage{
+
+  List<Shop> get massage {
     return List.from(_shops['massage']);
   }
-  List<Shop> get beauty{
+
+  List<Shop> get beauty {
     return List.from(_shops['beauty']);
   }
-
 }
