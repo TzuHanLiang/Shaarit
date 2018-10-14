@@ -7,26 +7,50 @@ class ShopCard extends StatelessWidget {
 
   ShopCard(this.shop, this.shopIndex);
 
-  Widget _buildVisitStatue(Shop shop){
-    if(shop.visit){
-      return Text('已造訪 |' + shop.distance.toString());
-    }else{
-      return Text('未造訪 |' + shop.distance.toString());
+  Widget _buildVisitStatue(Shop shop) {
+    if (shop.visit) {
+      return Text(
+        '已造訪 |' + shop.distance.toString(),
+        style: TextStyle(
+          color: Colors.grey[700],
+        ),
+      );
+    } else {
+      return Text(
+        '未造訪 |' + shop.distance.toString(),
+        style: TextStyle(
+          color: Colors.grey[700],
+        ),
+      );
     }
-
   }
 
   Widget _buildShopDescriptionColumn() {
     return Container(
       child: Column(children: <Widget>[
         Row(children: <Widget>[
-          Text(shop.shopName),
+          Text(
+            shop.shopName,
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
+          ),
           _buildVisitStatue(shop),
         ]),
         Row(
           children: <Widget>[
-            Text('Coupon: ' + shop.coupon.toString() + '%'),
-            Text('  Bonus: ' + shop.rebate.toString() + '%'),
+            Text(
+              'Coupon: ' + shop.coupon.toString() + '%',
+              style: TextStyle(
+                color: Colors.red[900],
+              ),
+            ),
+            Text(
+              '  Bonus: ' + shop.rebate.toString() + '%',
+              style: TextStyle(
+                color: Colors.red[900],
+              ),
+            ),
           ],
         )
       ]),

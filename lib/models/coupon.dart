@@ -4,7 +4,7 @@ class Coupon {
   final String shopName;
   final String shopType;
   final String category;
-  final double coupon;
+  final int coupon;
   final int recommendNumberOfTimes;
 
   Coupon(this.refferrer, this.image, this.shopName, this.shopType,
