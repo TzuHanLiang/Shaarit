@@ -13,19 +13,24 @@ class CouponCard extends StatelessWidget {
       children: <Widget>[
         Positioned(
           child: Container(
-            margin: EdgeInsets.only(left: 20.0, top: 100.0, bottom: 150.0),
+            height: MediaQuery.of(context).size.height * .42,
+            width: MediaQuery.of(context).size.width * .85,
+            margin: EdgeInsets.only(
+              left: 20.0,
+            ),
             child: Card(
               color: Colors.red,
               elevation: 6.0,
               margin: EdgeInsets.all(0.0),
               child: Column(children: <Widget>[
                 Image.asset(
-                  'assets/food.jpg',
-                  height: 180.0,
-                  width: 320.0,
+                  coupon.image,
+                  height: MediaQuery.of(context).size.height * .24,
+                  width: MediaQuery.of(context).size.width * .85,
                   fit: BoxFit.cover,
                 ),
                 Container(
+                  margin: EdgeInsets.only(top: 20.0, left: 20.0),
                   child: Row(
                     children: <Widget>[
                       Column(children: <Widget>[

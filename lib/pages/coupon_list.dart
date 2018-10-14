@@ -32,13 +32,7 @@ class MyCouponPage extends StatelessWidget {
             ),
           ),
         ),
-        Positioned(
-          top: 180.0,
-          left: 120.0,
-            child: Column(children: <Widget>[
-          Icon(Icons.arrow_upward, color: Colors.grey),
-          Text('向上滑動推薦給朋友'),
-        ])),
+        
       ],
     );
   }
