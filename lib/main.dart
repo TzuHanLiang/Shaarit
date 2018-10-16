@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 import 'package:scoped_model/scoped_model.dart';
 
@@ -12,6 +13,7 @@ import './pages/coupon_detail.dart';
 import './scoped-models/my_models.dart';
 
 main() {
+  // debugPaintSizeEnabled=true;
   runApp(MyApp());
 }
 
