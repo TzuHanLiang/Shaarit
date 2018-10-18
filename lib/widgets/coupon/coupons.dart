@@ -13,7 +13,7 @@ class Coupons extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemBuilder: (BuildContext context, int index) =>
             CouponCard(coupons[index], index),
-        itemCount: coupons.length,
+        itemCount: coupons.length,     
       );
     } else {
       couponCards = Container();
@@ -22,17 +22,12 @@ class Coupons extends StatelessWidget {
   }
 
   Widget build(BuildContext context) {
-    return Stack(children: <Widget>[
-      Positioned(
-        child: ScopedModelDescendant<MyModels>(
-            builder: (BuildContext context, Widget child, MyModels model) {
-          return _buildCouponList(model.coupons);
-        }),
-      ),
-      Positioned(
-        top: MediaQuery.of(context).size.width * .05,
-        left: MediaQuery.of(context).size.width * .33,
-        child: Transform.translate(
+    return ListView(children: <Widget>[
+      // Positioned(
+      //   top: MediaQuery.of(context).size.width * .05,
+      //   left: MediaQuery.of(context).size.width * .33,
+      //   child: 
+        Transform.translate(
           offset: Offset(0.0, 0.0),
           child: Column(children: <Widget>[
             Container(
@@ -49,7 +44,32 @@ class Coupons extends StatelessWidget {
             )
           ]),
         ),
-      ),
+      // ),
+
+      // Positioned(
+      //   top: MediaQuery.of(context).size.height*.13,
+      //   width: MediaQuery.of(context).size.width,
+      //   child:
+         Container(
+          height: MediaQuery.of(context).size.height*.42,
+          child:ScopedModelDescendant<MyModels>(
+            builder: (BuildContext context, Widget child, MyModels model) {
+          return _buildCouponList(model.coupons);
+        }),),
+        
+      // ),
+      // Positioned(
+      //   top: MediaQuery.of(context).size.height*.55,
+      //   width: MediaQuery.of(context).size.width,
+      //   child: 
+        // Container(
+        //   height: MediaQuery.of(context).size.height*.42,
+        //   child:ScopedModelDescendant<MyModels>(
+        //     builder: (BuildContext context, Widget child, MyModels model) {
+        //   return _buildCouponList(model.coupons);
+        // }),),   
+      // ),
+      
     ]);
   }
 }

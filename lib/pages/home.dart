@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import './shop_list.dart';
+import './shop_list_tabview.dart';
+// import './shop_list_button_nav.dart';
 import './coupon_list.dart';
 import './get_coupon.dart';
 import './profile.dart';

@@ -1,69 +1,77 @@
 import 'package:flutter/material.dart';
 
 import './shops.dart';
+// import '../ui_elements/shoplist_category_label.dart';
+import '../ui_elements/shoplist_category_button.dart';
 
 class ShopsContainer extends StatelessWidget {
+  final double heightbar = 8.0;
   final String shopType;
   ShopsContainer(this.shopType);
 
-
-  List<FlatButton> _buildCategoryButtons({bool growable: true}) {
-    List<FlatButton> categoryButtons;
+  List<Widget> _buildCategoryButtons({bool growable: true}) {
+    List<Widget> categoryButtons;
     if (shopType == 'restaurant') {
-      categoryButtons =[
-            FlatButton(child: Text('泰式'), onPressed: () {}),
-            FlatButton(child: Text('中菜'), onPressed: () {}),
-            FlatButton(child: Text('日式'), onPressed: () {}),
-            FlatButton(child: Text('韓式'), onPressed: () {}),
-            FlatButton(child: Text('粵菜'), onPressed: () {}),
-            FlatButton(child: Text('法式'), onPressed: () {}),
-          ];
+      categoryButtons = [
+        ShopListCategoryButton('泰式', () {}),
+        ShopListCategoryButton('中菜', () {}),
+        ShopListCategoryButton('日式', () {}),
+        ShopListCategoryButton('韓式', () {}),
+        ShopListCategoryButton('法式', () {}),
+        ShopListCategoryButton('粵菜', () {}),
+      ];
     } else if (shopType == 'hotel') {
-      categoryButtons =[
-            FlatButton(child: Text('商旅'), onPressed: () {}),
-            FlatButton(child: Text('Airbnb'), onPressed: () {}),
-            FlatButton(child: Text('Motel'), onPressed: () {}),
-            FlatButton(child: Text('度假村'), onPressed: () {}),
-            FlatButton(child: Text('溫泉'), onPressed: () {}),
-            
-          ];
+      categoryButtons = [
+        ShopListCategoryButton('商旅', () {}),
+        ShopListCategoryButton('Airbnb', () {}),
+        ShopListCategoryButton('Motel', () {}),
+        ShopListCategoryButton('度假村', () {}),
+        ShopListCategoryButton('溫泉', () {}),
+      ];
     } else if (shopType == 'massage') {
-      categoryButtons =[
-            FlatButton(child: Text('足底按摩'), onPressed: () {}),
-            FlatButton(child: Text('水療會館'), onPressed: () {}),
-            FlatButton(child: Text('韓式汗蒸'), onPressed: () {}),
-            FlatButton(child: Text('度假村'), onPressed: () {}),
-          ];
+      categoryButtons = [
+        ShopListCategoryButton('足底按摩', () {}),
+        ShopListCategoryButton('水療會館', () {}),
+        ShopListCategoryButton('韓式汗蒸', () {}),
+        ShopListCategoryButton('度假村', () {}),
+      ];
     } else if (shopType == 'beauty') {
-      categoryButtons =[
-            FlatButton(child: Text('微整形'), onPressed: () {}),
-            FlatButton(child: Text('臉部保養'), onPressed: () {}),
-            FlatButton(child: Text('睫毛嫁接'), onPressed: () {}),
-            FlatButton(child: Text('整牙'), onPressed: () {}),
-            FlatButton(child: Text('新娘秘書'), onPressed: () {}),
-          ];
+      categoryButtons = [
+        ShopListCategoryButton('微整形', () {}),
+        ShopListCategoryButton('臉部保養', () {}),
+        ShopListCategoryButton('睫毛嫁接', () {}),
+        ShopListCategoryButton('整牙', () {}),
+        ShopListCategoryButton('新娘秘書', () {}),
+      ];
     }
     return categoryButtons;
-
   }
 
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        title: ListView(
-          scrollDirection: Axis.horizontal, children: _buildCategoryButtons(),
-          // [
-          //   FlatButton(child: Text('泰式'), onPressed: () {}),
-          //   FlatButton(child: Text('中菜'), onPressed: () {}),
-          //   FlatButton(child: Text('日式'), onPressed: () {}),
-          //   FlatButton(child: Text('韓式'), onPressed: () {}),
-          //   FlatButton(child: Text('粵菜'), onPressed: () {}),
-          //   FlatButton(child: Text('法式'), onPressed: () {}),
-          // ]
-        ),
+      // backgroundColor: Colors.transparent,
+      // appBar: AppBar(
+      //   backgroundColor: Colors.transparent,
+      //   title: ListView(
+      //     scrollDirection: Axis.horizontal,
+      //     children: _buildCategoryButtons(),
+      //   ),
+      // ),
+      body: new Column(
+        children: <Widget>[
+          new Container(
+            margin: EdgeInsets.only(left: 8.0),
+            constraints: BoxConstraints(maxHeight: 35.0),
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: _buildCategoryButtons(),
+            ),
+          ),
+          new Expanded(
+            child: Shops(shopType),
+          ),
+        ],
       ),
-      body: Shops(shopType),
     );
   }
 }
