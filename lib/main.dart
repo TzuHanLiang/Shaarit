@@ -4,7 +4,10 @@ import 'package:flutter/rendering.dart';
 import 'package:scoped_model/scoped_model.dart';
 
 import './pages/auth.dart';
+import './pages/login_or_register.dart';
 import './pages/register.dart';
+import './pages/register1.dart';
+import './pages/confirmation.dart';
 import './pages/home.dart';
 import './pages/shop_list_tabview.dart';
 // import './pages/shop_list_button_nav.dart';
@@ -37,8 +40,10 @@ class _MyAppState extends State<MyApp> {
         // accentColor: Colors.cyan[600],
       ),
         routes: {
-          '/': (BuildContext context) => AuthPage(),
-          '/resgister': (BuildContext context) => RegisterPage(),
+          '/': (BuildContext context) => LoginOrRegisterPage(),
+          '/confirmation': (BuildContext context) => Confirmation(),
+          '/register': (BuildContext context) => RegisterPage1(),
+          
           '/home': (BuildContext context) => MyHomePage(),
         },
         onGenerateRoute: (RouteSettings settings) {

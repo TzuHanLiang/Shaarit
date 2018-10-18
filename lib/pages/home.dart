@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../presentation/shaarit_app_icons.dart';
+
 import './shop_list_tabview.dart';
 // import './shop_list_button_nav.dart';
 import './coupon_list.dart';
@@ -38,19 +40,19 @@ class _MyHomePageState extends State<MyHomePage> {
         type: BottomNavigationBarType.fixed,
         items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.shop),
+            icon: Icon(Shaarit.shops),
             title: Text('Shop'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.card_giftcard),
+            icon: Icon(Shaarit.mycoupon),
             title: Text('MyCoupon'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.pages),
+            icon: Icon(Shaarit.getcoupon),
             title: Text('GetCoupon'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.portrait),
+            icon: Icon(Shaarit.profile),
             title: Text('Profile'),
           ),
         ],

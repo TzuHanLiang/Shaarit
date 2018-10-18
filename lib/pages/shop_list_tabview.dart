@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import '../widgets/shop/container.dart';
 
 import '../widgets/ui_elements/gradient_appbar.dart';
+import '../widgets/ui_elements/shoplist_tab.dart';
 import '../widgets/ui_elements/shoplist_sorting_button.dart';
+import '../presentation/shaarit_app_icons.dart';
 
 class ShopListPage extends StatelessWidget {
   final List<String> shopType = [
@@ -13,10 +15,18 @@ class ShopListPage extends StatelessWidget {
   ];
 
   final List<Tab> shopTypeTab = [
-    Tab(text: '餐廳'),
-    Tab(text: '飯店'),
-    Tab(text: '按摩'),
-    Tab(text: '美容'),
+    Tab(
+      child: ShopListTab('餐廳'),
+    ),
+    Tab(
+      child: ShopListTab('飯店'),
+    ),
+    Tab(
+      child: ShopListTab('按摩'),
+    ),
+    Tab(
+      child: ShopListTab('美容'),
+    ),
   ];
 
   Widget build(BuildContext context) {
@@ -24,110 +34,111 @@ class ShopListPage extends StatelessWidget {
       showModalBottomSheet<void>(
           context: context,
           builder: (BuildContext context) {
-            return
-                Theme(
-                  data: ThemeData(canvasColor: Colors.black),
-                  child:
-                Container(
-              color: Color.fromRGBO(255, 255, 255, 0.0),
+            return Theme(
+              data: ThemeData(canvasColor: Colors.black),
               child: Container(
-                height: 280.0,
-                width: 414.0,
-                decoration: BoxDecoration(
-                    color: Colors.red,
-                    borderRadius: new BorderRadius.only(
-                        topLeft: const Radius.circular(8.0),
-                        topRight: const Radius.circular(8.0))),
-                child: Stack(children: [
-                  Positioned(
-                    child: Container(
-                      width: 414.0,
-                      height: 43.5,
-                      decoration: BoxDecoration(
-                        border: Border(
-                          bottom: BorderSide(
-                              color: Color.fromRGBO(226, 226, 226, 1.0),
-                              width: 1.0,
-                              style: BorderStyle.solid),
+                color: Color.fromRGBO(255, 255, 255, 0.0),
+                child: Container(
+                  height: 280.0,
+                  width: 414.0,
+                  decoration: BoxDecoration(
+                      color: Colors.red,
+                      borderRadius: new BorderRadius.only(
+                          topLeft: const Radius.circular(8.0),
+                          topRight: const Radius.circular(8.0))),
+                  child: Stack(children: [
+                    Positioned(
+                      child: Container(
+                        width: 414.0,
+                        height: 43.5,
+                        decoration: BoxDecoration(
+                          border: Border(
+                            bottom: BorderSide(
+                                color: Color.fromRGBO(226, 226, 226, 1.0),
+                                width: 1.0,
+                                style: BorderStyle.solid),
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  Positioned(
-                    top: 16.0,
-                    left: 177.0,
-                    child: Text(
-                      "Sort",
-                      style: const TextStyle(
-                          color: const Color(0xff000000),
-                          fontWeight: FontWeight.w500,
-                          fontFamily: "DIN",
-                          fontStyle: FontStyle.normal,
-                          fontSize: 14.0),
+                    Positioned(
+                      top: 16.0,
+                      left: 177.0,
+                      child: Row(children: [
+                        Text(
+                          "Sort",
+                          style: const TextStyle(
+                              color: const Color(0xff000000),
+                              fontWeight: FontWeight.w500,
+                              fontFamily: "DIN",
+                              fontStyle: FontStyle.normal,
+                              fontSize: 14.0),
+                        ),
+                        Icon(Shaarit.ic_filter_black)
+                      ]),
                     ),
-                  ),
-                  Positioned(
-                    top: 84.0,
-                    right: 289.0,
-                    child: ShopListSortingButton('Coupon | ', () {}),
-                  ),
-                  Positioned(
-                    top: 84.0,
-                    left: 165.0,
-                    child: ShopListSortingButton('多到少', () {}),
-                  ),
-                  Positioned(
-                    top: 84.0,
-                    left: 293.0,
-                    child: ShopListSortingButton('少到多', () {}),
-                  ),
-                  Positioned(
-                    top: 132.0,
-                    right: 289.0,
-                    child: ShopListSortingButton('回饋金 | ', () {}),
-                  ),
-                  Positioned(
-                    top: 132.0,
-                    left: 165.0,
-                    child: ShopListSortingButton('多到少', () {}),
-                  ),
-                  Positioned(
-                    top: 132.0,
-                    left: 293.0,
-                    child: ShopListSortingButton('少到多', () {}),
-                  ),
-                  Positioned(
-                    top: 180.0,
-                    right: 289.0,
-                    child: ShopListSortingButton('距離 | ', () {}),
-                  ),
-                  Positioned(
-                    top: 180.0,
-                    left: 165.0,
-                    child: ShopListSortingButton('遠到近', () {}),
-                  ),
-                  Positioned(
-                    top: 180.0,
-                    left: 293.0,
-                    child: ShopListSortingButton('近到遠', () {}),
-                  ),
-                  Positioned(
-                    top: 228.0,
-                    right: 289.0,
-                    child: ShopListSortingButton('我去過的 | ', () {}),
-                  ),
-                  Positioned(
-                    top: 228.0,
-                    left: 165.0,
-                    child: ShopListSortingButton('多到少', () {}),
-                  ),
-                  Positioned(
-                    top: 228.0,
-                    left: 293.0,
-                    child: ShopListSortingButton('少到多', () {}),
-                  ),
-                ]),
-              ),
+                    Positioned(
+                      top: 84.0,
+                      right: 289.0,
+                      child: ShopListSortingButton('Coupon | ', () {}),
+                    ),
+                    Positioned(
+                      top: 84.0,
+                      left: 165.0,
+                      child: ShopListSortingButton('多到少', () {}),
+                    ),
+                    Positioned(
+                      top: 84.0,
+                      left: 293.0,
+                      child: ShopListSortingButton('少到多', () {}),
+                    ),
+                    Positioned(
+                      top: 132.0,
+                      right: 289.0,
+                      child: ShopListSortingButton('回饋金 | ', () {}),
+                    ),
+                    Positioned(
+                      top: 132.0,
+                      left: 165.0,
+                      child: ShopListSortingButton('多到少', () {}),
+                    ),
+                    Positioned(
+                      top: 132.0,
+                      left: 293.0,
+                      child: ShopListSortingButton('少到多', () {}),
+                    ),
+                    Positioned(
+                      top: 180.0,
+                      right: 289.0,
+                      child: ShopListSortingButton('距離 | ', () {}),
+                    ),
+                    Positioned(
+                      top: 180.0,
+                      left: 165.0,
+                      child: ShopListSortingButton('遠到近', () {}),
+                    ),
+                    Positioned(
+                      top: 180.0,
+                      left: 293.0,
+                      child: ShopListSortingButton('近到遠', () {}),
+                    ),
+                    Positioned(
+                      top: 228.0,
+                      right: 289.0,
+                      child: ShopListSortingButton('我去過的 | ', () {}),
+                    ),
+                    Positioned(
+                      top: 228.0,
+                      left: 165.0,
+                      child: ShopListSortingButton('多到少', () {}),
+                    ),
+                    Positioned(
+                      top: 228.0,
+                      left: 293.0,
+                      child: ShopListSortingButton('少到多', () {}),
+                    ),
+                  ]),
+                ),
               ),
             );
           });

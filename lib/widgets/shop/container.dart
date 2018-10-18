@@ -48,17 +48,19 @@ class ShopsContainer extends StatelessWidget {
   }
 
   Widget build(BuildContext context) {
-    return Scaffold(
-      // backgroundColor: Colors.transparent,
+    return 
+      Scaffold(
       // appBar: AppBar(
-      //   backgroundColor: Colors.transparent,
+      //   backgroundColor: Colors.white,
       //   title: ListView(
       //     scrollDirection: Axis.horizontal,
       //     children: _buildCategoryButtons(),
       //   ),
       // ),
-      body: new Column(
+      body: 
+      new Column(
         children: <Widget>[
+          // Scaffold(body:
           new Container(
             margin: EdgeInsets.only(left: 8.0),
             constraints: BoxConstraints(maxHeight: 35.0),
@@ -67,11 +69,14 @@ class ShopsContainer extends StatelessWidget {
               children: _buildCategoryButtons(),
             ),
           ),
+          // ),
           new Expanded(
-            child: Shops(shopType),
+            child: 
+            Shops(shopType),
           ),
         ],
       ),
+    
     );
   }
 }
