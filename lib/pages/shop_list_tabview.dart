@@ -4,7 +4,7 @@ import '../widgets/shop/container.dart';
 import '../widgets/ui_elements/gradient_appbar.dart';
 import '../widgets/ui_elements/shoplist_tab.dart';
 import '../widgets/ui_elements/shoplist_sorting_button.dart';
-import '../presentation/shaarit_app_icons.dart';
+import '../presentation/shaarit_icons.dart';
 
 class ShopListPage extends StatelessWidget {
   final List<String> shopType = [
@@ -74,7 +74,7 @@ class ShopListPage extends StatelessWidget {
                               fontStyle: FontStyle.normal,
                               fontSize: 14.0),
                         ),
-                        Icon(Shaarit.ic_filter_black)
+                        Icon(Shaarit.icfilter)
                       ]),
                     ),
                     Positioned(
@@ -171,7 +171,7 @@ class ShopListPage extends StatelessWidget {
           GradientAppBar('Shops'),
           new Container(
             constraints: BoxConstraints(
-                maxHeight: MediaQuery.of(context).size.height * .77),
+                maxHeight: MediaQuery.of(context).size.height * .80),
             child: DefaultTabController(
               length: shopTypeTab.length,
               child: new Column(

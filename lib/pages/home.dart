@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../presentation/shaarit_app_icons.dart';
+import '../presentation/shaarit_icons.dart';
 
 import './shop_list_tabview.dart';
 // import './shop_list_button_nav.dart';

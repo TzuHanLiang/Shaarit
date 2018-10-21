@@ -1,129 +1,79 @@
 import 'package:flutter/material.dart';
+import '../widgets/ui_elements/gradient_appbar.dart';
 
-class RegisterPage extends StatefulWidget {
+import '../widgets/ui_elements/primary_btn_red.dart';
+import '../widgets/ui_elements/register_title_font.dart';
+
+class RegisterPage1 extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return _RegisterPageState();
+    return _RegisterPage1State();
   }
 }
 
-class _RegisterPageState extends State<RegisterPage> {
-  String _emailValue;
-  String _passwordValue;
-  bool _acceptTerms = false;
-
-  DecorationImage _buildBackgroundImage() {
-    return DecorationImage(
-      fit: BoxFit.cover,
-      colorFilter:
-          ColorFilter.mode(Colors.black.withOpacity(0.5), BlendMode.dstATop),
-      image: AssetImage('assets/food.jpg'),
-    );
-  }
-
-  Widget _buildEmailTextField() {
-    return TextField(
-      decoration: InputDecoration(
-          labelText: 'Enter your E-Mail',
-          filled: true,
-          fillColor: Colors.white),
-      keyboardType: TextInputType.emailAddress,
-      onChanged: (String value) {
-        setState(() {
-          _emailValue = value;
-        });
-      },
-    );
-  }
-
-  Widget _buildPasswordTextField() {
-    return TextField(
-      decoration: InputDecoration(
-          labelText: 'Enter Password', filled: true, fillColor: Colors.white),
-      obscureText: true,
-      onChanged: (String value) {
-        setState(() {
-          _passwordValue = value;
-        });
-      },
-    );
-  }
-
-  Widget _buildVerifyPasswordTextField() {
-    return TextField(
-      decoration: InputDecoration(
-          labelText: 'Verify Password', filled: true, fillColor: Colors.white),
-      obscureText: true,
-      onChanged: (String value) {
-        // if (value == _passwordValue) {
-        //   return true;
-        // } else {
-        //   return false;
-        // }
-      },
-    );
-  }
-
-  Widget _buildAcceptSwitch() {
-    return SwitchListTile(
-      value: _acceptTerms,
-      onChanged: (bool value) {
-        setState(() {
-          _acceptTerms = value;
-        });
-      },
-      title: Text('Accept Terms'),
-    );
-  }
-
-  void _signup() {
-    Navigator.pushReplacementNamed(context, '/home');
-  }
+class _RegisterPage1State extends State<RegisterPage1> {
+  String _phoneNum;
+  String _imei;
 
   @override
   Widget build(BuildContext context) {
-    final double deviceWidth = MediaQuery.of(context).size.width;
-    final double targetWidth = deviceWidth > 550.0 ? 500.0 : deviceWidth * 0.95;
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Sign up'),
-      ),
-      body: Container(
-        decoration: BoxDecoration(
-          image: _buildBackgroundImage(),
-        ),
-        padding: EdgeInsets.all(10.0),
-        child: Center(
-          child: SingleChildScrollView(
+      body: Stack(
+        children: <Widget>[
+          Container(
+            constraints: BoxConstraints(
+              maxHeight: MediaQuery.of(context).size.height,
+              maxWidth: MediaQuery.of(context).size.width,
+            ),
+          ),
+          GradientAppBar('Register'),
+          Positioned(
+            top: 40.0,
+            left: 0.0,
+            child: BackButton(
+              color: Colors.white,
+            ),
+          ),
+          Positioned(
+            top: 56.0,
+            left: 130.0,
+            child: RegisterTitleFont("請輸入電話號碼"),
+          ),
+          Positioned(
+            top: 120.0,
+            left: 32.0,
+            child: DropdownButton<String>(
+              items: <String>['A', 'B', 'C', 'D'].map((String value) {
+                return new DropdownMenuItem<String>(
+                  value: value,
+                  child: new Text(value),
+                );
+              }).toList(),
+              onChanged: (_) {},
+            ),
+          ),
+          Positioned(
+            top: 120.0,
+            right: 32.0,
             child: Container(
-              width: targetWidth,
-              child: Column(
-                children: <Widget>[
-                  _buildEmailTextField(),
-                  SizedBox(
-                    height: 10.0,
-                  ),
-                  Text('Enter 8-10 alphanumeric password'),
-                  _buildPasswordTextField(),
-                  SizedBox(
-                    height: 10.0,
-                  ),
-                  _buildVerifyPasswordTextField(),
-                  _buildAcceptSwitch(),
-                  SizedBox(
-                    height: 10.0,
-                  ),
-                  RaisedButton(
-                    color: Theme.of(context).primaryColor,
-                    textColor: Colors.white,
-                    child: Text('Sign up'),
-                    onPressed: _signup,
-                  ),
-                ],
+              constraints: BoxConstraints(maxHeight: 30.0, maxWidth: 212.0),
+              child: TextField(
+                decoration: InputDecoration(
+                    // labelText: 'Phone number',
+                    filled: true,
+                    fillColor: Colors.white),
+                keyboardType: TextInputType.number,
+                obscureText: false,
+                onChanged: (String value) {},
               ),
             ),
           ),
-        ),
+          Positioned(
+              top: 204.0,
+              left: 48.0,
+              child: PrimaryButtonRed('取得驗證碼',
+                  () => Navigator.pushNamed(context, '/confirmation'))),
+        ],
       ),
     );
   }

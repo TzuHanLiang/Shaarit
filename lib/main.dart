@@ -6,13 +6,14 @@ import 'package:scoped_model/scoped_model.dart';
 import './pages/auth.dart';
 import './pages/login_or_register.dart';
 import './pages/register.dart';
-import './pages/register1.dart';
 import './pages/confirmation.dart';
 import './pages/home.dart';
 import './pages/shop_list_tabview.dart';
 // import './pages/shop_list_button_nav.dart';
 import './pages/shop_detail.dart';
 import './pages/coupon_detail.dart';
+
+import './pages/setting.dart';
 
 import './scoped-models/my_models.dart';
 
@@ -41,8 +42,9 @@ class _MyAppState extends State<MyApp> {
       ),
         routes: {
           '/': (BuildContext context) => LoginOrRegisterPage(),
-          '/confirmation': (BuildContext context) => Confirmation(),
           '/register': (BuildContext context) => RegisterPage1(),
+          '/confirmation': (BuildContext context) => ConfirmationPage(),
+          '/settings':(BuildContext context) => Settings(),
           
           '/home': (BuildContext context) => MyHomePage(),
         },
